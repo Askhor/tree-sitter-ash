@@ -16,17 +16,17 @@ module.exports = grammar({
         regular_expr: $ => /\|.*/,
         regex_ref: $ => seq("#", $.identifier),
         number: $ => /\d+/,
-        comment: $ => /\/{2}.*/,
+        _comment: $ => /\/{2}.*/,
 
-        _definition: $ => choice($.token_definition, $.node_definition, $.abstract_node_definition, $.comment),
+        _definition: $ => choice($.token_definition, $.node_definition, $.abstract_node_definition, $._comment),
         _node_declaration: $ => seq("node", $.identifier, optional(seq("is", $.identifier))),
 
         token_definition: $ => seq("token", $.identifier, $.regular_expr),
         node_definition: $ => seq($._node_declaration, "{", repeat($._field), "}"),
         abstract_node_definition: $ => seq("abstract", $._node_declaration),
 
-        _field: $ => choice($.node_field, $.comment),
-        node_field: $ => choice(
+        _field: $ => choice($._node_field, $._comment),
+        _node_field: $ => choice(
             seq(optional(choice("optional", $._repeat_modifier)), $.identifier, "is", $.identifier),
             $.regular_expr,
             $.regex_ref

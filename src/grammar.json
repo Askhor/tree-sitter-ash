@@ -34,7 +34,7 @@
       "type": "PATTERN",
       "value": "\\d+"
     },
-    "comment": {
+    "_comment": {
       "type": "PATTERN",
       "value": "\\/{2}.*"
     },
@@ -55,7 +55,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "comment"
+          "name": "_comment"
         }
       ]
     },
@@ -152,15 +152,15 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "node_field"
+          "name": "_node_field"
         },
         {
           "type": "SYMBOL",
-          "name": "comment"
+          "name": "_comment"
         }
       ]
     },
-    "node_field": {
+    "_node_field": {
       "type": "CHOICE",
       "members": [
         {

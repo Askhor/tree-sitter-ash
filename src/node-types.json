@@ -23,29 +23,6 @@
       "required": true,
       "types": [
         {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "identifier",
-          "named": true
-        },
-        {
-          "type": "node_field",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "node_field",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
           "type": "identifier",
           "named": true
         },
@@ -90,10 +67,6 @@
       "types": [
         {
           "type": "abstract_node_definition",
-          "named": true
-        },
-        {
-          "type": "comment",
           "named": true
         },
         {
@@ -149,10 +122,6 @@
   {
     "type": "array",
     "named": false
-  },
-  {
-    "type": "comment",
-    "named": true
   },
   {
     "type": "identifier",

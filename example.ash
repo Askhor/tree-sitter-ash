@@ -3,7 +3,9 @@ token identifier |\w+
 token number |\d+
 token regular_expression |\|.*
 
+// A comment!
 node file {
+	// Another comment!
 	array definitions is definition
 }
 
@@ -37,13 +39,14 @@ node node is definition {
 
 abstract node field
 
-node field_modifier {
-	node OPTIONAL {
-		|optional
-	}
-	node ARRAY {
-   		|array
-	}
+abstract node field_modifier
+
+node OPTIONAL is field_modifier {
+	|optional
+}
+
+node ARRAY is field_modifier {
+	|array
 }
 
 node unnamed_field is field {
